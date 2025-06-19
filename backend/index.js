@@ -1,8 +1,9 @@
 const express = require("express");
 const app = express();
-const PORT = 5001;
 const mongoose = require("mongoose");
 const cors = require("cors");
+require("dotenv").config();
+const PORT = process.env.PORT || 5001;
 const actorRoutes = require("./routes/actor");
 
 //Used to parse data to json
@@ -14,7 +15,7 @@ app.get("/", (req,res)=>{
 })
 app.use("/actors", actorRoutes);
 
-mongoose.connect("mongodb://127.0.0.1:27017/moviestars", {
+mongoose.connect(MONGO, {
 }).then(()=> console.log("DB connected to moviestars"))
     .catch(err =>console.error(err))
 
