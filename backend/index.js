@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 require("dotenv").config();
 const PORT = process.env.PORT || 5001;
-const MONGO = process.env.MANGO;
+const MONGO = process.env.MONGO;
 const actorRoutes = require("./routes/actor");
 
 //Used to parse data to json
