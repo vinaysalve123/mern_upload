@@ -1,0 +1,33 @@
+body{
+    /* background: linear-gradient(to left, white, silver, white); */
+    background: linear-gradient(to left, silver, white, silver);
+}
+
+.ul{
+    margin-top: 4rem;
+}
+
+.result{
+    margin-left: 5rem; 
+    margin-right: 7rem; 
+    border-top: 2px solid silver;
+    border-left: 2px solid silver;
+    border-right: 2px solid silver;
+    border-bottom: 1px solid silver;
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    font-weight: 500 ;
+}
+
+.buttons{
+    display: flex;
+    gap: 1rem;
+}
+
+.formButton{
+    margin: 1.5rem
+}
