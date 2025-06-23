@@ -10,12 +10,14 @@ function App() {
   const [users, setUsers] = useState([]);
   const [index, setIndex] = useState(null);
 
+  const BASE_URL = "https://mern-upload-2.onrender.com/actors";
+
   const fetchActors= async()=>{
     // await axios.get("http://localhost:5001/actors")  //Fetched by using 'axios'
     // .then(response=>setUsers(response.data))
     // .catch(error =>console.log(error));    
 
-    const res = await fetch("http://localhost:5001/actors");  //Fetched using 'fetch'
+    const res = await fetch(`${BASE_URL}`);  //Fetched using 'fetch'
     const data = await res.json();
     setUsers(data);
     // console.log(data);
@@ -32,7 +34,7 @@ function App() {
       // .then((res)=> console.log(res))
       // .catch(error=>console.log(error));
 
-      await fetch("http://localhost:5001/actors", {
+      await fetch(`${BASE_URL}`, {
         method: "POST",
         headers: {"Content-Type" : "application/json"},
         body: JSON.stringify({name})
@@ -50,7 +52,7 @@ function App() {
       // .catch(error=>console.log(error));
 
 
-      await fetch(`http://localhost:5001/actors/${index}`, {
+      await fetch(`${BASE_URL}/${index}`, {
         method: "PUT",
         headers: {"Content-Type" : "application/json"},
         body: JSON.stringify({name})
@@ -71,7 +73,7 @@ function App() {
     // .then(()=> fetchActors())
     // .catch(error=>console.log(error));
 
-    await fetch(`http://localhost:5001/actors/${id}`, {
+    await fetch(`${BASE_URL}/${id}`, {
       method: "DELETE"
     })
     await fetchActors();
